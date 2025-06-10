@@ -4,7 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 
 airports = []
-customers = []  # ← DODANE
+customers = []
 
 
 class Airport:
@@ -36,7 +36,7 @@ class Employee:
         self.position = position
 
 
-class Customer:  # ← DODANE
+class Customer:
     def __init__(self, first_name, last_name, passport):
         self.first_name = first_name
         self.last_name = last_name
@@ -181,13 +181,12 @@ Label(frame_details, text="Pracownicy:").grid(row=4, column=0)
 label_detail_employees = Label(frame_details, text="---", justify=LEFT)
 label_detail_employees.grid(row=4, column=1)
 
-# Mapa
+
 map_widget = tkintermapview.TkinterMapView(frame_map, width=1200, height=400, corner_radius=0)
 map_widget.grid(row=0, column=0, columnspan=2)
 map_widget.set_position(52.23, 21.00)
 map_widget.set_zoom(6)
 
-# ========== KLIENCI (CUSTOMERS) ==========
 
 Label(frame_customers, text="Klienci").grid(row=0, column=0, columnspan=2)
 
@@ -235,6 +234,5 @@ entry_cust_passport.grid(row=5, column=1)
 Button(frame_customers, text="Dodaj klienta", command=add_customer).grid(row=6, column=0, columnspan=2)
 Button(frame_customers, text="Usuń klienta", command=remove_customer).grid(row=7, column=0, columnspan=2)
 
-# ========== KONIEC ==========
 
 root.mainloop()
